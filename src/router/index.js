@@ -2,10 +2,15 @@ import _ from 'lodash';
 import Vue from 'vue';
 import Router from 'vue-router';
 
-// import Login from '../views/login/login';
+import Login from '../views/login/login';
 // import Logout from '../views/login/logout.vue';
 
+import login from '../views/login/router';
+console.log(login);
+
 Vue.use(Router);
+
+
 
 let routers = [{
     /**
@@ -17,19 +22,14 @@ let routers = [{
     meta: {
         pageName: '首页'
     }
-// }, {
-//     path: '/login',
-//     name: 'login',
-//     component: Login,
-//     meta: {
-//         hideNav: true,
-//         noNeedLogin: true,
-//         noMessageTick: true,
-//         pageName: '登录',
-//         helpIcon: {
-//             hide: true
-//         }
-//     }
+}, {
+    path: '/login',
+    name: 'login',
+    component: Login,
+    meta: {
+        noLogin: true,
+        noHeader: true,
+    }
 // },
 // {
 //     path: '/logout',
