@@ -1,0 +1,36 @@
+@import variables
+@import element
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+html,
+body
+    // padding: 0
+    // margin: 0
+    font-family: $font
+    font-size: 14px
+    line-height: 1.4
+    height: 100%
+    color: $color-text
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+
+p, form, ol, ul, li, dl, dt, dd
+    margin: 0
+    padding: 0
+    list-style: none
+
+a
+    text-decoration: none
+    color: $color-blue
+    &:hover
+        color: $color-blue-hover
+
+input, a
+    outline: none
+body
+    button, input, optgroup, select, textarea
+        font-family: $font

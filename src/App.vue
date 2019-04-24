@@ -1,21 +1,20 @@
-<template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<template lang='pug'>
+    #app
+        el-button(@click='handleBtnClick') hello world!
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'app',
-  components: {
-    HelloWorld
+  export default {
+      name: 'app',
+      components: {
+      },
+      methods: {
+          handleBtnClick () {
+              alert('hello world');
+          }
+      }
   }
-}
 </script>
-
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

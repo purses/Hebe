@@ -1,4 +1,6 @@
-# hebe
+# Hebe
+
+一个基于 VUE 的前端管理系统模板
 
 ## Project setup
 ```
