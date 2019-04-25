@@ -13,3 +13,495 @@
     border-color: $color-grey
     min-width: 96px
     font-weight: normal
+
+    &:focus
+        color: $color-text
+        border-color: $color-grey
+        background-color: $color-grey-light
+
+    &:hover,
+    &.is-active,
+    &:active
+        background-color: $color-grey-light
+        border-color: darken($color-grey, 10)
+        color: $color-text
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo4MjFBMjU0MkIzMDkxMUU3OTk1RENDMzBFNDk0QUYyRiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo4MjFBMjU0M0IzMDkxMUU3OTk1RENDMzBFNDk0QUYyRiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjgyMUEyNTQwQjMwOTExRTc5OTVEQ0MzMEU0OTRBRjJGIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjgyMUEyNTQxQjMwOTExRTc5OTVEQ0MzMEU0OTRBRjJGIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+tQAUGQAAAA9JREFUeNpiYGBgkAIIMAAAHwAbZIBtGgAAAABJRU5ErkJggg==)
+
+.el-button--secondary
+    background-color: #fff
+    border: $border
+    &:focus
+        border-color: $color-grey
+        background-color: #fff
+
+    &:hover,
+    &.is-active,
+    &:active
+        background: #fff
+        border-color: $color-blue
+
+=button-base($color)
+    color: #fff
+    background-color: $color
+    border: 0 none
+
+    &:focus
+        color: #fff
+        background-color: $color
+
+    &:hover,
+    &.is-active,
+    &:active
+        background-color: $color
+        color: #fff
+
+.el-button--primary
+    +button-base($color-blue)
+
+.el-button--success
+    +button-base($color-green)
+
+.el-button--warning
+    +button-base($color-orange)
+
+.el-button--danger
+    +button-base($color-red)
+
+.el-button--info
+    +button-base($color-blue)
+
+.el-button--text
+    border: transparent
+
+.el-button + .el-button
+    margin-left: 0
+
+.el-button--large
+    height: 36px
+    line-height: 34px
+
+.el-button--small,
+.el-button--mini
+    height: 30px
+    line-height: 28px
+    min-width: inherit
+    font-size: 12px
+
+.el-message-box,
+.el-dialog,
+.el-popover
+    .el-button
+        min-width: 68px
+        font-size: 14px
+
+/* el-input */
+.el-input__inner
+    height: 36px
+    border-radius: 4px
+    border-color: $color-grey
+    color: $color-text
+    &:focus
+        border-color: $color-blue
+    .el-input--small &
+        height: 30px
+        line-height: 28px
+        // 覆盖多选small时的高度
+        &[style*='32px']
+            height: 30px !important
+.el-input-group__append, .el-input-group__prepend
+    border-radius: 4px
+.el-input-group__append
+    border-top-left-radius: 0
+    border-bottom-left-radius: 0
+.el-input-group__prepend
+    border-top-right-radius: 0
+    border-bottom-right-radius: 0
+.el-form-item.is-success .el-input__inner,
+.el-form-item.is-success .el-textarea__inner
+    border-color: $color-grey
+    &:focus
+        border-color: $color-blue
+.el-input .el-input__icon,
+.el-select .el-input .el-input__icon
+    line-height: 16px
+    font-size: 14px
+    color: $color-text-lighter
+    font-weight: bold
+.el-select .el-input .el-select__caret.is-show-close:hover
+    font-weight: bold
+    color: darken(#d5d5d5, 10)
+
+/* el-radio-group */
+.el-radio-button__inner
+    color: $color-text
+    &:hover
+        color: darken($color-text, 10)
+.el-radio-button__orig-radio:checked + .el-radio-button__inner
+    color: #fff
+    border-color: $color-blue
+
+/* el-select */
+.el-select
+    &--small
+        .el-input__inner
+            height: 30px
+    &:hover
+        .el-input__inner
+            border-color: $color-blue
+.el-select-dropdown
+    border: none
+    .popper__arrow
+        display: none
+
+    &[x-placement]
+        margin: 0
+    .el-select-dropdown__item
+        color: $color-text
+        height: 30px
+        line-height: 30px
+        span
+            line-height: 30px!important
+    .el-select-dropdown__item.selected
+        font-weight: normal
+    .el-select-dropdown__item.hover, .el-select-dropdown__item:hover
+        background: #f2f2f2
+
+/* el-checkbox */
+.el-checkbox
+    margin-right: 0
+    .el-checkbox__input.is-checked + .el-checkbox__label
+        color: $color-text
+
+/* el-radio */
+.el-radio__inner
+    width: 16px
+    height: 16px
+    &:after
+        width: 8px
+        height: 8px
+.el-radio__input.is-checked+.el-radio__label
+    color: #313A46
+/* el-breadcrumb */
+.el-breadcrumb__inner, .el-breadcrumb__inner a
+    color: $color-blue
+    font-weight: normal
+    &:hover
+        color:  darken($color-blue, 10)
+.el-breadcrumb__separator
+    font-weight: normal
+    color: $color-text-lighter
+
+.el-breadcrumb__item:last-child .el-breadcrumb__inner,
+.el-breadcrumb__item:last-child .el-breadcrumb__inner a
+    color: $color-text
+    &:hover
+        color: $color-text
+
+/* el-pagination */
+.el-pagination
+    font-weight: normal
+    .el-pager
+        li
+            border: $border
+            min-width: 28px
+            border-radius: 3px
+            margin-left: 4px
+
+
+            &.active
+                border-color: $color-blue
+                background: $color-blue
+                color: #fff
+
+            &.active + li
+                border-left: $border
+    .btn-prev,
+    .btn-next
+        border: $border
+        padding: 0 4px
+        min-width: 28px
+        border-radius: 3px
+
+    .btn-next
+        margin-left: 4px
+
+/* el-dialog */
+.el-dialog
+    border-radius: 8px
+    .el-dialog__header
+        font-size: 14px
+        padding: 0
+        padding-left: 30px
+        line-height: 65px
+        // border-bottom: $border
+    .el-dialog__title
+        font-size: 14px
+        color: $color-text
+        font-weight: bold
+    .el-dialog__body
+        color: $color-text
+        padding: 30px
+    .el-dialog__footer
+        padding: 0 30px 30px
+    .el-dialog__headerbtn
+        right: 18px
+        top: 18px
+        font-size: 18px
+        .el-dialog__close
+            color: $color-text-light
+            font-weight: bold
+            font-size: 24px
+    &.plain
+        .el-dialog__header
+            border-bottom: none
+            padding-left: 20px
+        .el-dialog__body
+            padding: 0 22px 20px
+        .el-dialog__footer
+            padding: 0 22px 20px
+        .el-dialog__close
+            font-size: 16px
+
+/* el-message */
+.el-message
+    background: #fadbc0
+    &.el-message--error
+        background: #f8cfcf
+    &.el-message--success
+        background: #d7ecc0
+    &.el-message--warning
+        background: #fadbc0
+    border-radius: 5px
+    border: 0
+    min-width: 0
+    .el-icon-success
+        color: #9ed364
+    p.el-message__content
+        color: $color-text
+        flex-grow: 1
+    .el-icon-info
+        color: $color-orange
+    .el-message__closeBtn
+        transform: none
+        position: static
+        float: right
+
+
+/* el-message-box */
+.el-message-box
+    border-radius: 8px
+    .el-message-box__header
+        padding: 30px 30px 0 30px
+        font-weight: bold
+    .el-message-box__content
+        padding: 15px 30px 20px
+        color: $color-text
+    .el-message-box__btns
+        padding: 0 30px 20px 0
+    .el-message-box__status
+        display: none
+    .el-message-box__message
+        padding: 0
+    .el-message-box__headerbtn
+        color: $color-text-light
+    .el-message-box__close
+        font-size: 25px
+        color: $color-text-light
+        font-weight: bold
+        &:hover
+            color: $color-text-light
+
+
+/* el-form */
+.el-form--label-left
+    .el-form-item
+        margin-bottom: 20px
+    .el-form-item.is-required .el-form-item__label:before
+        display: none
+    .el-form-item.is-required .el-form-item__label:after
+        content: '*'
+        color: $color-red
+        margin-left: 4px
+
+/* el-date-picker */
+.el-date-picker
+    .el-picker-panel__footer
+        .el-button + .el-button
+            margin-left: 10px
+
+/* el-table */
+.el-table
+    thead
+        color: $color-text
+    th
+        font-weight: normal
+        background: $color-grey-lightest
+    th.is-leaf
+        border-bottom: none
+    .el-table__fixed-right
+        th
+            background: lighten($color-grey-lightest, 2)
+
+/* el-message */
+.el-message-box
+    .el-message-box__btns button:nth-child(1)
+        float: right
+        margin-left: 10px
+
+/* el-cascader */
+.el-cascader
+    line-height: 36px
+
+/* select suffix */
+.el-select,
+.el-cascader
+    .el-input--suffix
+        .el-input__inner
+            padding-left: 10px
+        .el-input__suffix
+            right: 0
+        .el-input__inner
+            padding-right: 25px
+.el-input-group__append
+    background: #fff
+    .el-select
+        color: $color-text
+    .el-input--suffix
+        .el-input__inner
+            padding-left: 5px
+            padding-right: 0
+
+/* loading */
+.el-loading-mask
+    overflow: hidden
+.el-loading-spinner
+    &:before
+        content: ' '
+        background: url('~assets/images/loading.gif') no-repeat center center
+        display: inline-block
+        width: 25px
+        height: 25px
+        vertical-align: middle
+        margin-right: 10px
+    &:after
+        content: '加载中...'
+    .circular,
+    .path
+        display: none
+
+/* el-popover */
+.el-popover
+    color: $color-text
+
+/* el-textarea */
+.el-textarea
+    .el-textarea__inner
+        padding: 10px 15px
+        color: $color-text
+.el-tooltip__popper.is-light
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1)!important
+    border: none!important
+    padding: 20px
+    color: $color-text-light
+    line-height: 25px
+    font-size: 14px
+    .popper__arrow
+        border: none!important
+.el-tooltip__popper.is-y-dark
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1)!important
+    border: none!important
+    padding: 6px 14px
+    color: #fff
+    line-height: 25px
+    font-size: 14px
+    background-color: #485465
+    opacity: 0.9
+    .popper__arrow
+        background-color: #485465
+        opacity: 0.9
+        border: none!important
+.el-tooltip__popper
+    &.hidden
+        display: none!important
+/* el-autocomplete-suggestion */
+.el-autocomplete-suggestion
+    .el-autocomplete-suggestion__wrap
+        box-shadow: 0 0 6px 0 rgba(0,0,0,0.07)
+        border: 0 none
+    &[x-placement]
+        margin: 0
+    .popper__arrow
+        display: none
+
+/* el-cascader */
+.el-cascader-menus
+    &[x-placement]
+        margin: 0
+    .popper__arrow
+        display: none
+    .el-cascader-menu__item--extensible:after
+        color: $color-text-lighter
+        font-weight: bold
+
+/* el-tabs */
+// el-tabs--card
+.el-tabs--card
+    > .el-tabs__header
+        border-bottom: 0
+        margin: 0
+        .el-tabs__nav-wrap
+            margin-bottom: 0
+        .el-tabs__nav
+            border: 0
+        .el-tabs__item
+            margin-left: 5px
+            border: 0
+            border-top: 3px solid #FAFAFA
+            height: 48px
+            background: #FAFAFA
+            border-radius: 4px 4px 0 0
+            line-height: 45px
+
+            &:first-child
+                margin-left: 0
+
+            &.is-active
+                border-top-color: $color-blue
+                background: #fff
+            &:focus.is-active.is-focus:not(:active)
+                border-radius: 4px 4px 0 0
+                box-shadow: 0 0
+
+.el-tabs.light
+    .el-tabs__nav-wrap::after
+        height: 1px
+        background-color: #F0F0F0
+.el-tabs.plain
+    .el-tabs__nav-wrap::after
+        display: none
+
+
+.el-popover.plain
+    background: #485465
+    //background-color: #6CA4EF
+    padding: 13px 11px
+    color: #fff
+    font-size: 14px
+    box-shadow: none
+    p
+        word-break: break-word
+        width: 100%
+    p.note
+        font-size: 12px
+        opacity: .7
+        margin-top: 5px
+    .el-popover__title
+        color: #fff
+        font-size: 14px
+    &[x-placement^="top"]
+        .popper__arrow
+            &:after
+                border-top-color: #485465 !important
+
+.v-modal
+    opacity: 0.7

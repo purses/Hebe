@@ -8,7 +8,6 @@
 
 html,
 body
-    margin: 0
     font-family: $font
     font-size: 14px
     line-height: 1.4
@@ -33,3 +32,690 @@ input, a
 body
     button, input, optgroup, select, textarea
         font-family: $font
+// 通用容器样式，白背景、30px内边距、带阴影
+.y-container
+    background-color: #fff
+    padding: 30px
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.05)
+
+
+// 页面标题
+.y-title
+    font-size: 18px
+
+// margin 相关
+.y-ml
+    margin-left: 20px !important
+
+.y-ml-sm
+    margin-left: 10px !important
+
+.y-ml-xs
+    margin-left: 4px !important
+
+.y-ml-lg
+    margin-left: 30px !important
+
+.y-mr
+    margin-right: 20px !important
+
+.y-mr-sm
+    margin-right: 10px !important
+
+.y-mr-xs
+    margin-right: 4px !important
+
+.y-mr-lg
+    margin-right: 30px !important
+
+.y-mt
+    margin-top: 20px !important
+
+.y-mt-sm
+    margin-top: 10px !important
+
+.y-mt-lg
+    margin-top: 30px !important
+
+.y-mt-xs
+    margin-top: 4px !important
+
+.y-mb
+    margin-bottom: 20px !important
+
+.y-mb-sm
+    margin-bottom: 10px !important
+
+.y-mb-lg
+    margin-bottom: 30px !important
+
+
+// 字体颜色
+.y-color-white
+    color: #fff
+
+.y-color-grey
+    color: #999
+
+.y-color-red
+    color: $color-red
+
+.y-color-pink
+    color: $color-pink
+
+.y-color-blue
+    color: $color-blue
+
+.y-color-orange
+    color: $color-orange
+
+.y-color-purple
+    color: $color-purple
+
+.y-color-green
+    color: $color-green
+
+
+// 背景颜色
+.y-bg-blue
+    background: $color-blue
+
+.y-bg-grey
+    background: $color-grey
+
+.y-bg-white
+    background: white
+
+
+// 浮动
+.y-pull-left
+    float: left
+
+.y-pull-right
+    float: right
+
+
+// 100%宽高
+.y-full-width
+    width: 100% !important
+
+.y-full-height
+    height: 100% !important
+
+
+// 清浮动
+.y-clearfix
+    &:after
+        content: ''
+        clear: both
+        display: table
+
+
+// 文字颜色
+.y-text
+    color: $color-text
+    &:hover
+        color: $color-text
+.y-text-light
+    color: $color-text-light
+    &:hover
+        color: $color-text-light
+.y-text-lighter
+    color: $color-text-lighter
+    &:hover
+        color: $color-text-lighter
+.y-text-lightest
+    color: $color-text-lightest
+    &:hover
+        color: $color-text-lightest
+
+// 一些简写，兼容策略，以前的 .relative, .text-center, .text-right 等可迁移过来
+.y-relative
+    position: relative !important
+
+.y-text-left
+    text-align: left !important
+
+.y-text-center
+    text-align: center !important
+
+.y-text-right
+    text-align: right !important
+.y-bg-blue-light
+    background: rgba(108, 164, 239, 0.1) !important
+.y-bg-pink-light
+    background: rgba(255, 126, 126, 0.1) !important
+.y-no-wrap
+    white-space: nowrap !important
+
+.y-underline
+    text-decoration: underline
+
+.y-table
+    border-spacing: 0
+    width: 100%
+    min-width: 100%
+    font-size: 14px
+    line-height: 1.5
+    border: none
+    // 24px
+    //text-align: center
+    // 解决饿了么表格空数据时横向滚动条被fixed列覆盖，无法点击的bug
+    &.empty-data
+        .el-table__fixed
+            top: -14px
+            .el-table__fixed-header-wrapper
+                top: 14px
+            &:before
+                display: none
+    &.multilevelTable
+        th
+            border-right: 1px solid darken(#ededed, 4)!important
+            border-bottom: 1px solid darken(#ededed, 4)!important
+        td
+            border-right: 1px solid #ededed!important
+            border-bottom: 1px solid #ededed!important
+    &.el-table .el-table__fixed-right thead.is-group th
+        background: #f9f9f9
+    &.el-table
+        .el-table__fixed-right th .cell
+            background: #f9f9f9
+    .el-table__fixed, .el-table__fixed-right
+        z-index: 0
+    &.el-table::before, &.el-table::after
+        display: none
+    .el-table__empty-block
+        border-bottom: 1px solid #ededed
+    &.el-table thead.is-group th
+        background: $color-grey-lightest
+        padding-top: 7px
+        padding-bottom: 7px
+        height: 30px
+        //.cell
+            text-align: center
+        //&.is-leaf
+            .cell
+                text-align: left
+    table
+        border: none
+    //&.y-table-single
+        tr th
+            padding-top: 12px
+            padding-bottom: 12px
+    th, td
+        height: 40px
+        //text-align: left
+        .cell
+            min-height: 24px
+            padding-left: 10px!important
+            line-height: 1.5
+        // &:first-child
+            .cell
+                padding-left: 20px!important
+    tr
+        vertical-align: top
+        th
+            padding-top: 8px
+            padding-bottom: 10px
+            color: $color-text-light
+            font-weight: 600
+            //text-align: center
+            background-color: $color-grey-lightest
+            .cell
+                color: $color-text-light
+                //text-align: left
+                white-space: nowrap
+                background-color: $color-grey-lightest
+            i.sort
+                position: absolute
+                margin-left: 6px
+                font-size: 16px
+                transform: scale(0.7)
+                color: #a0a0a0
+                cursor: pointer
+                &:hover
+                    color: darken(#a0a0a0, 30)
+                &.up
+                    top: -2px
+                &.down
+                    top: 6.5px
+                &.active
+                    color: $color-blue
+                    &:hover
+                        color: darken($color-blue, 30)
+            &[rowspan='2']
+                padding-top: 18px
+                padding-bottom: 18px
+
+        th[rowspan='2'], &:nth-child(2) th
+            vertical-align: middle
+            position: relative
+            //text-align: left
+        td
+            position: relative
+            padding-top: 8px
+            padding-bottom: 7px
+            border-bottom: 1px solid $color-grey-light
+            color: $color-text
+            cursor: pointer
+            white-space: nowrap
+            //text-align: left
+            &.opFixed
+                .cell
+                    overflow: inherit
+            .visited
+                color: #808080
+            // 飘红
+            em
+                font-style: normal
+                color: #f88989
+
+    &.hoverable
+        tr:hover
+            td
+                background-color: #eaeef0
+                border-color: #f0f0f0
+
+// 只有一级表头的table
+.table-right
+    td
+        em
+            font-style: normal
+            color: #f88989
+.y-table-single
+    &.cursor-inherit
+        tr
+            td
+                cursor: inherit
+    th
+        i
+            position: relative
+            top: 1px
+            left: 4px
+            color: #989898
+            cursor: pointer
+            &:hover
+                color: mix(#989898, #000, 90)
+            &.sort
+                left: auto
+                margin-left: 4px
+                // visibility: hidden
+            &[class*='percent']
+                visibility: hidden
+        &:hover
+            i.sort
+                visibility: visible
+            i[class*='percent']
+                visibility: visible
+        &.opt
+            .cell
+                padding-left: 0 !important
+    td
+        vertical-align: top
+        .unfold
+            padding-left: 14px
+            padding-right: 60px
+            background: #fff
+            transition: background 0.3s
+        .show-more
+            position: relative
+            height: 63px
+            overflow: hidden
+            display: inline-block
+            .unfold
+                position: absolute
+                bottom: 0
+                right: 0
+                display: inline-block
+        &.opt
+            .cell
+                padding-left: 0 !important
+    tr:hover
+        .unfold
+            background: #f0f6fd
+
+.y-btn-narrow
+    min-width: 68px
+
+.y-pointer
+    cursor: pointer
+
+// 无数据样式
+.h
+    font-size: 14px
+    color: $color-grey
+    padding-top: 30px
+    padding-bottom: 30px
+    text-align: center
+    img
+        margin-bottom: 15px
+
+::-webkit-input-placeholder
+    color: #a9b1c4
+    font-size: 0.875em
+
+::-moz-placeholder
+    color: #a9b1c4
+    font-size: 0.875em
+
+.y-display-set-poppver
+    margin-top: -12px!important
+    transform: translate(-10px, 0px)
+.y-display-setting
+    padding: 0 0 16px 0
+    margin: -12px
+    max-height: 400px
+    max-width: 1000px
+    min-width: 186px
+    overflow: auto
+    border-radius: 3px
+    background: white
+    text-align: center
+    transition-duration: 300ms
+    table
+        width: 100%
+        border-spacing: 0
+
+    .checkbox-wrapper
+        text-align: left
+        padding: 0 16px
+        height: 30px
+        line-height: 30px
+        span
+            font-weight: normal!important
+        &:hover
+            background: #f2f2f2
+    button
+        min-width: 68px
+        margin-top: 12px
+
+.y-no-data
+    font-size: 14px
+    color: #BAC4C9
+    padding-top: 30px
+    padding-bottom: 30px
+    text-align: center
+    img
+        margin-bottom: 8px
+
+// app.vue   抽取
+i.y-desease-icon
+    background-color: #6195AD
+    color: white
+    border-radius: 100%
+    text-align: center
+    // 鼻咽癌
+    &.npc
+        background-color: #7FC49E
+    // 肺癌
+    &.nsclc
+        background-color: #FBCF65
+    // 结直肠癌
+    &.crc
+        background-color: #84b2ca
+    // 乳腺癌
+    &.bc
+        background-color: #f88989
+    // 肝癌
+    &.hcc
+        background-color: #E4B9AE
+    // 胃癌
+    &.gc
+        background-color: #F8A461
+    // 儿童脑肿瘤
+    &.cnog
+        background-color: #9598F4
+    // 血液肿瘤
+    &.leu
+        background-color: #f88989
+    // 糖尿病
+    &.dm
+        background-color: #81b2f3
+    // 糖尿病
+    &.dm2
+        background-color: #81b2f3
+    // 垂体瘤
+    &.pit
+        background-color: #57CBBA
+    &.icu
+        background-color: #f88989
+    &.sicu
+        background-color: #f88989
+    // 骨髓瘤
+    &.myeloma
+        background-color: #5587A2
+    &.mds
+        background-color: #eb8c6f
+    // 慢性阻塞性肺疾病
+    &.copd
+        background-color: #eb8c6f
+    // 乙肝
+    &.hbv
+        background-color: #64cdd6
+    // 心力衰竭
+    &.heartfailure
+        background-color: #f8a461
+    // 哮喘
+    &.asthma
+        background-color: #e4b9ae
+
+    // 食道癌 #84b2ca
+    &.ec
+        background-color: #84b2ca
+    // 先心病 #84b2ca
+    // 青光眼 64cdd6
+
+    // 内分泌 eb8c6f
+    &.endocrine
+        background-color: #eb8c6f
+    // 病理 81b2f3
+    &.pathology
+        background-color: #81b2f3
+    // 先心病
+    &.chd
+        background-color: #84b2ca
+    // 前列腺癌
+
+    &.pc
+        background-color: #5587a2
+    // 淋巴瘤
+    &.lym
+        background-color: #81b2f3
+    // 类风湿性关节炎
+    &.ra
+        background-color: #fbcf65
+    // 脊柱炎
+    &.as
+        background-color: #64cdd6
+    // 黑色素瘤
+    &.melamona
+        background-color: #5587a2
+    // 骨髓瘤
+    &.mm
+        background-color: #5587a2
+    // 高血脂
+    &.hyperlipidemia
+        background-color: #f88989
+    // 高血压
+    &.hypertension
+        background-color: #f88989
+    // 多发性硬化
+    &.ms
+        background-color: #57cbba
+    // 丙肝
+    &.hcv
+        background-color: #eb8c6f
+    // 白血病
+    &.leu
+        background-color: #f88989
+    // 阿尔茨海默病
+    &.alzheimer
+        background-color: #81b2f3
+    &.epi
+        background-color: #f88989
+
+    // 代谢疾病
+    &.metabolism
+        background-color: #5587a2
+    // 风湿免疫
+    &.rheu
+        background-color: #81b2f3
+    // 肝病
+    &.hepatitis
+        background-color: #E4B9AE
+    // 呼吸
+    &.respiratory
+        background-color: #64cdd6
+    // 疾病通用
+    &.common
+        background-color: #5587a2
+    // 神经内科
+    &.nervous
+        background-color: #7FC49E
+    // 糖尿病
+    &.diabetes
+        background-color: #F8A461
+    // 心血管
+    &.cadio
+        background-color: #f88989
+    // 血液肿瘤
+    &.blood
+        background-color: #f88989
+    // 肿瘤
+    &.cancer
+        background-color: #eb8c6f
+    // 子宫内膜癌
+    &.endometrial
+        background-color: #eb8c6f
+    // 胰腺癌
+    &.pancreas
+        background-color: #fbcf65
+    // 宫颈癌
+    &.cervical
+        background-color: #e4b9ae
+    // 膀胱癌
+    &.bladder
+        background-color: #84b2ca
+    // 卵巢癌
+    &.ovarian
+        background-color: #f88989
+    // 肾癌
+    &.kedney
+        background-color: #81b2f3
+.y-table
+    .cell
+        position: relative
+        .unfold
+            padding-right: 60px
+            transition: background 0.3s
+            padding-left: 14px
+            position: absolute
+            top: 42px
+            right: 0
+            background: #fff
+        .show-more
+            position: relative
+            height: 63px
+            overflow: hidden
+            display: inline-block
+            .unfold
+                position: absolute
+                bottom: 0
+                right: 0
+                display: inline-block
+    tr:hover
+        .unfold
+            background: #f5f7fa
+// 只有一级表头的table
+.y-table-single
+    &.cursor-inherit
+        tr
+            td
+                cursor: inherit
+    th
+        i
+            position: relative
+            top: 1px
+            left: 4px
+            color: #989898
+            cursor: pointer
+            &:hover
+                color: mix(#989898, #000, 90)
+            &.sort
+                left: auto
+                margin-left: 4px
+                // visibility: hidden
+            &[class*='percent']
+                visibility: hidden
+        &:hover
+            i.sort
+                visibility: visible
+            i[class*='percent']
+                visibility: visible
+        &.opt
+            .cell
+                padding-left: 0 !important
+    td
+        vertical-align: top
+        &.opt
+            .cell
+                padding-left: 0 !important
+    tr:hover
+        .unfold
+            background: #f0f6fd
+
+
+.sd-icon-home
+    font-weight: bold
+
+
+.y-condition-multi-select
+    min-width: 155px
+    .el-select__tags-text
+        max-width: 114px
+        display: inline-block
+        white-space: nowrap
+        text-overflow: ellipsis
+        overflow: hidden
+        vertical-align: top
+    .el-tag
+        background-color: rgba($color-blue, .2)
+        color: $color-text
+        margin: 1px 0 1px 6px
+    .el-tag__close.el-icon-close
+        background: #B4BDC9
+    .el-select__input
+        margin-left: 10px
+.y-condition-multi-select-popover
+    max-width: 400px
+.y-assistant-dialog
+    border-radius: 8px
+    position: relative
+    min-width: 720px
+    .el-dialog__header
+        border: none
+        .el-dialog__headerbtn
+            top: -3px
+            right: -35px
+            .el-dialog__close
+                color: #fff
+                font-size: 30px
+    .el-dialog__body
+        padding: 0
+        min-width: 700px
+
+.y-tip-vip
+    opacity: 0.9
+    background: #FF4A4A
+    border-radius: 7px 7px 7px 0px
+    height: 14px
+    width: 24px
+    line-height: 12px
+    color: #ffffff
+    padding-left: 1px
+    padding-top: 1px
+    .text
+        transform: scale(0.8)
+
+.y-border-bottom
+    border-bottom: 1px solid #f1f1f1
